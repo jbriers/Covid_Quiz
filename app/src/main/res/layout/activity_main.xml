@@ -1,0 +1,291 @@
+<!--
+    Copywrite (C) Jason Briers (UncleJay) - for Education purposes only.
+    Android Basics Nanodegree : Project Three
+    Task: Build a Quiz App
+    Initial Release 9/12/2020
+ -->
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="@string/covid_quiz"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textSize="32sp"
+            android:textStyle="bold" />
+
+        <!-- QUESTION 1 : Radio Button : Toilet Paper -->
+
+        <TextView style="@style/questionDivider" />
+
+        <TextView
+            style="@style/questionText"
+            android:text="@string/question1" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                style="@style/wrapwrap"
+                android:text="@string/fly_spray" />
+
+            <RadioButton
+                android:id="@+id/q1_toiletpaper"
+                style="@style/wrapwrap"
+                android:text="@string/toilet_paper" />
+
+            <RadioButton
+                style="@style/wrapwrap"
+                android:text="@string/socks" />
+
+        </RadioGroup>
+
+        <!-- QUESTION 2 : EditText : China -->
+
+        <TextView style="@style/questionDivider" />
+
+        <TextView
+            style="@style/questionText"
+            android:text="@string/question2" />
+
+        <EditText
+            android:id="@+id/q2_userText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="@string/country"
+            android:hint="@string/country"
+            android:inputType="text"
+            android:maxLines="1"
+            android:singleLine="true" />
+
+        <!-- QUESTION 3 : Check Box : True False True False -->
+
+        <TextView style="@style/questionDivider" />
+
+        <TextView
+            style="@style/questionText"
+            android:text="@string/question3" />
+
+        <CheckBox
+            android:id="@+id/q3_elderly"
+            style="@style/checkboxAnswer"
+            android:text="@string/q3option1" />
+
+        <CheckBox
+            android:id="@+id/q3_socialdistance"
+            style="@style/checkboxAnswer"
+            android:text="@string/q2option2" />
+
+        <CheckBox
+            android:id="@+id/q3_alcohol"
+            style="@style/checkboxAnswer"
+            android:text="@string/q3option3" />
+
+        <CheckBox
+            android:id="@+id/q3_washhands"
+            style="@style/checkboxAnswer"
+            android:text="@string/q3option4" />
+
+        <!-- QUESTION 4 : Radio Button : Image Question (check that nested layout!) -->
+
+        <TextView style="@style/questionDivider" />
+
+        <TextView
+            style="@style/questionText"
+            android:text="@string/question4" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/q4_blobImage"
+                style="@style/imageIconicView"
+                android:contentDescription="@string/image_blob"
+                android:onClick="q4blobClick"
+                android:src="@drawable/q4_blob" />
+
+            <ImageView
+                android:id="@+id/q4_coronaImage"
+                style="@style/imageIconicView"
+                android:layout_toRightOf="@+id/q4_blobImage"
+                android:contentDescription="@string/image_corona"
+                android:onClick="q4coronaClick"
+                android:src="@drawable/q4_corona" />
+
+            <ImageView
+                android:id="@+id/q4_roboImage"
+                style="@style/imageIconicView"
+                android:layout_toRightOf="@+id/q4_coronaImage"
+                android:contentDescription="@string/image_robo"
+                android:onClick="q4roboClick"
+                android:src="@drawable/q4_robo" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="144dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/q4blob"
+                    style="@style/wrapwrap"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginTop="96dp" />
+
+                <RadioButton
+                    android:id="@+id/q4corona"
+                    style="@style/wrapwrap"
+                    android:layout_marginLeft="64dp"
+                    android:layout_marginTop="96dp" />
+
+                <RadioButton
+                    android:id="@+id/q4robo"
+                    style="@style/wrapwrap"
+                    android:layout_marginLeft="64dp"
+                    android:layout_marginTop="96dp" />
+
+            </RadioGroup>
+
+        </RelativeLayout>
+
+        <!-- QUESTION 5 : Check Box : True False False True False -->
+
+        <TextView style="@style/questionDivider" />
+
+        <TextView
+            style="@style/questionText"
+            android:text="@string/question5" />
+
+        <CheckBox
+            android:id="@+id/q5_drycough"
+            style="@style/checkboxAnswer"
+            android:text="@string/q5option1" />
+
+        <CheckBox
+            android:id="@+id/q5_purple"
+            style="@style/checkboxAnswer"
+            android:text="@string/q5option2" />
+
+        <CheckBox
+            android:id="@+id/q5_flatearth"
+            style="@style/checkboxAnswer"
+            android:text="@string/q5option3" />
+
+        <CheckBox
+            android:id="@+id/q5_fever"
+            style="@style/checkboxAnswer"
+            android:text="@string/q5option4" />
+
+        <CheckBox
+            android:id="@+id/q5_humor"
+            style="@style/checkboxAnswer"
+            android:text="@string/q5option5" />
+
+        <!-- QUESTION 6 : Radio Button : Social Distance 1.5 meters -->
+
+        <TextView style="@style/questionDivider" />
+
+        <TextView
+            style="@style/questionText"
+            android:text="@string/question6" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RadioButton
+                style="@style/wrapwrap"
+                android:text="@string/q6option1" />
+
+            <RadioButton
+                style="@style/wrapwrap"
+                android:text="@string/q6option2" />
+
+            <RadioButton
+                android:id="@+id/q6_onepointfive"
+                style="@style/wrapwrap"
+                android:text="@string/q6option3" />
+
+            <RadioButton
+                style="@style/wrapwrap"
+                android:text="@string/q6option4" />
+
+        </RadioGroup>
+
+        <!-- QUESTION 7 : Radio Button : Wear Mask -->
+
+        <TextView style="@style/questionDivider" />
+
+        <TextView
+            style="@style/questionText"
+            android:text="@string/question7" />
+
+        <ImageView
+            style="@style/wrapwrap"
+            android:contentDescription="@string/image_mask"
+            android:src="@drawable/wearmask" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                style="@style/wrapwrap"
+                android:text="@string/glasses" />
+
+            <RadioButton
+                style="@style/wrapwrap"
+                android:text="@string/helmet" />
+
+            <RadioButton
+                style="@style/wrapwrap"
+                android:text="@string/lipstick" />
+
+            <RadioButton
+                android:id="@+id/q7_wearmask"
+                style="@style/wrapwrap"
+                android:text="@string/mask" />
+
+        </RadioGroup>
+
+        <!-- Finish of the questions - Ready to submit answers -->
+        <TextView style="@style/questionDivider" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/feeling_lucky"
+            android:textSize="16sp" />
+
+        <Button
+            style="@style/wrapwrap"
+            android:layout_marginTop="8dp"
+            android:onClick="submitAnswers"
+            android:text="@string/submit_answers" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/image_credits"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+
+</ScrollView>
