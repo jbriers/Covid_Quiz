@@ -1,10 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
 <!--
     Copywrite (C) Jason Briers (UncleJay) - for Education purposes only.
     Android Basics Nanodegree : Project Three
     Task: Build a Quiz App
-    Initial Release 9/12/2020
+    Initial Release 8/12/2020
+    Last Update: 9/12/2020
  -->
-<?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -27,6 +28,15 @@
             android:textSize="32sp"
             android:textStyle="bold" />
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="@string/subheading"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textSize="14sp"
+            android:textStyle="bold" />
         <!-- QUESTION 1 : Radio Button : Toilet Paper -->
 
         <TextView style="@style/questionDivider" />
@@ -265,6 +275,84 @@
 
         </RadioGroup>
 
+        <!-- QUESTION 8 : EditText : Bat -->
+
+        <TextView style="@style/questionDivider" />
+
+        <TextView
+            style="@style/questionText"
+            android:text="@string/question8" />
+
+        <EditText
+            android:id="@+id/q8_userText"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:autofillHints="@string/animal"
+            android:hint="@string/animal"
+            android:inputType="text"
+            android:maxLines="1"
+            android:singleLine="true" />
+
+        <!-- QUESTION 9 : Radio Button : Lockdown -->
+
+        <TextView style="@style/questionDivider" />
+
+        <TextView
+            style="@style/questionText"
+            android:text="@string/question9" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                style="@style/wrapwrap"
+                android:id="@+id/q9_lockdown"
+                android:text="@string/lockdown" />
+
+            <RadioButton
+                style="@style/wrapwrap"
+                android:text="@string/touchdown" />
+
+            <RadioButton
+                style="@style/wrapwrap"
+                android:text="@string/beatdown" />
+
+        </RadioGroup>
+
+        <!-- QUESTION 10 : Radio Button : Beer -->
+
+        <TextView style="@style/questionDivider" />
+
+        <TextView
+            style="@style/questionText"
+            android:text="@string/question10" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                style="@style/wrapwrap"
+                android:text="@string/coffee" />
+
+            <RadioButton
+                style="@style/wrapwrap"
+                android:id="@+id/q10_beer"
+                android:text="@string/beer" />
+
+            <RadioButton
+                style="@style/wrapwrap"
+                android:text="@string/flavoured_milk" />
+
+            <RadioButton
+                style="@style/wrapwrap"
+                android:text="@string/juice" />
+
+        </RadioGroup>
+
         <!-- Finish of the questions - Ready to submit answers -->
         <TextView style="@style/questionDivider" />
 
@@ -276,6 +364,7 @@
 
         <Button
             style="@style/wrapwrap"
+            android:id="@+id/answerButton"
             android:layout_marginTop="8dp"
             android:onClick="submitAnswers"
             android:text="@string/submit_answers" />

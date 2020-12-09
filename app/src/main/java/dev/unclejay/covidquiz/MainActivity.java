@@ -2,7 +2,8 @@
     Copywrite (C) Jason Briers (UncleJay) - for Education purposes only.
     Android Basics Nanodegree : Project Three
     Task: Build a Quiz App
-    Initial Release 9/12/2020
+    Initial Release 8/12/2020
+    Last Update: 9/12/2020
  */
 package dev.unclejay.covidquiz;
 
@@ -22,7 +23,7 @@ import dev.unclejay.covidquiz.R;
 
 public class MainActivity extends AppCompatActivity {
 
-    final int totalQuestions = 7;
+    final int totalQuestions = 10;
     int totalCorrect = 0;
 
     @Override
@@ -92,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
             totalCorrect += 1;
         }
 
-        /* Answer 3 : Check Box : Checked - Elderly & Alcohol   Not Checked - Social Distance and Hand Wash */
+        /* Answer 5 : Check Box : Checked - Elderly & Alcohol   Not Checked - Social Distance and Hand Wash */
         int q5tally = 0;
         CheckBox dryCoughCheckTrue = (CheckBox) findViewById(R.id.q5_drycough);
         CheckBox purpleCheckFalse = (CheckBox) findViewById(R.id.q5_purple);
@@ -130,22 +131,47 @@ public class MainActivity extends AppCompatActivity {
             totalCorrect += 1;
         }
 
+        /* Answer 8 : Edit Text : Bat */
+        EditText answerEightText = (EditText) findViewById(R.id.q8_userText);
+        if (answerEightText.getText().toString().trim().toUpperCase().equals("BAT")) {
+            totalCorrect += 1;
+        }
+
+        /* Answer 9 : Radio Button : Lockdown */
+        RadioButton answerNineCheck = (RadioButton) findViewById(R.id.q9_lockdown);
+        if (answerNineCheck.isChecked()) {
+            totalCorrect += 1;
+        }
+
+        /* Answer 10 : Radio Button : Corona Beer */
+        RadioButton answerTenCheck = (RadioButton) findViewById(R.id.q10_beer);
+        if (answerTenCheck.isChecked()) {
+            totalCorrect += 1;
+        }
+
         /* DISPLAY THEN RESET SCORE */
 
         /* Show the result via Toast */
 
         String toastMessage;
+        boolean longToast = false;
 
         if (totalCorrect == totalQuestions) {
-            toastMessage = "Congratulations you got 100%%\nYou are AWESOME!";
+            toastMessage = "Congratulations you got 100%\nYou are AWESOME!";
+            longToast = true;
         } else if (totalCorrect > 0) {
             toastMessage = "You got " + totalCorrect + " out of " + totalQuestions + " correct!\nTry adjusting your answers and resubmit.";
         } else {
             toastMessage = "All your answers are incorrect\nTry adjusting your answers and resubmit";
         }
 
-        Toast showToast = Toast.makeText(this, toastMessage, Toast.LENGTH_SHORT);
-        showToast.show();
+        if(longToast) {
+            Toast showToast = Toast.makeText(this, toastMessage, Toast.LENGTH_LONG);
+            showToast.show();
+        } else {
+            Toast showToast = Toast.makeText(this, toastMessage, Toast.LENGTH_SHORT);
+            showToast.show();
+        }
 
         /* Reset the score */
         totalCorrect = 0;

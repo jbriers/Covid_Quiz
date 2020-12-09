@@ -36,4 +36,17 @@
     <string name="feeling_lucky">Feeling lucky? Hit the button below to see how you went.</string>
     <string name="submit_answers">Submit Answers</string>
     <string name="image_credits"><![CDATA[Images courtesy Cartoon Dealer, HiClipart & Clker]]></string>
+    <string name="question10">What type of beverage is CORONA famously known for?</string>
+    <string name="animal">Animal</string>
+    <string name="question8">What animal is believed to have been the original source of COVID-19 to humans?</string>
+    <string name="coffee">Coffee</string>
+    <string name="flavoured_milk">Flavoured Milk</string>
+    <string name="beer">Beer</string>
+    <string name="lockdown">Lockdown</string>
+    <string name="touchdown">Touchdown</string>
+    <string name="duckdown">Duckdown</string>
+    <string name="beatdown">Beatdown</string>
+    <string name="subheading">10 Questions to test your knowledge</string>
+    <string name="question9">What is the common term applied where a community is restricted movement and confined to home</string>
+    <string name="juice">Juice</string>
 </resources>
